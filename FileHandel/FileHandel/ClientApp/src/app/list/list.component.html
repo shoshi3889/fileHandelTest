@@ -1,0 +1,16 @@
+
+<div class="wrapper">
+
+<ol >
+  <li *ngFor="let file of files">
+      <span >{{file.fileName}}.{{file.fileType}}</span>
+      <span >{{file.aouther}}, {{file.fileSize}}{{file.fileSizeFormat}}, {{file.isEncoded? 'Encoded': 'Not Encoded'}}</span>
+      <a routerLink="/edit/{{file.fileID}}">Edit</a> | 
+      <a href="" (click)="splitFile(file.fileID)" *ngIf="isCanSplit(file.fileSize, file.fileSizeFormat)">Split File</a>
+  </li>
+</ol>
+</div>
+<h3>sum file size: {{sumSizeInGB}} GB</h3>
+<button routerLink="/add" >Add File</button>
+<button (click)="shareFiels()" >Share Fiels</button>
+

@@ -1,0 +1,44 @@
+.wrapper {
+  /* max-width: 80rem; */
+  margin: 0 auto;
+}
+
+ol {
+  padding: 1.5rem 1.5rem 1.5rem 4em;
+  border: 0.3rem solid rgb(12, 107, 98);
+  /* column-gap: 7rem; */
+  column-rule: 4px dotted rgb(12, 107, 98);
+  border-radius: 0.5rem;
+}
+ol > * + * {
+  margin-top: 1rem;
+}
+
+::marker,
+h3 {
+  /* content: counters(list-item, "") ": "; */
+  font-weight: 700;
+  font-size: 1.5em;
+  color: rgb(12, 107, 98);
+}
+
+li span {
+  display: block;
+}
+
+li span:first-child {
+  font-size: 1.5em;
+}
+
+li span:last-child,
+a {
+  font-style: italic;
+}
+button {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(12, 107, 98);
+  color: #fff;
+  border-radius: 5px;
+}

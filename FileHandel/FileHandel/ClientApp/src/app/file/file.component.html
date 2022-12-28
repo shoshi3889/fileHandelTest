@@ -1,0 +1,64 @@
+
+ 
+<form [formGroup]="fileForm" (ngSubmit)="saveFile()">
+ 
+<h3>file details</h3>
+  <p *ngIf="fileForm.value.fileID != 0">
+    <label for="fileID">fileID</label>
+    <input type="text" id="fileID" name="fileID" formControlName="fileID" [attr.disabled]="true">
+  </p> 
+  <p>
+    <label for="fileName">file Name </label>
+    <input type="text" id="fileName" name="fileName" formControlName="fileName" 
+    [class.valid]="fileForm.get('fileName')?.valid && 
+    fileForm.get('fileName')?.touched"
+    [class.invalid]="fileForm.get('fileName')?.invalid && 
+    fileForm.get('fileName')?.touched"
+    > 
+  </p>
+  <p>
+    <label for="aouther">aouther</label>
+    <input type="text" id="aouther" name="aouther" formControlName="aouther"     
+    [class.valid]="fileForm.get('aouther')?.valid && 
+    fileForm.get('fileName')?.touched"
+    [class.invalid]="fileForm.get('aouther')?.invalid && 
+    fileForm.get('fileName')?.touched">
+  </p> 
+  
+  <p>
+    <label for="fileSize">file Size</label>
+    <input type="number" id="fileSize" name="fileSize" formControlName="fileSize"     
+    [class.valid]="fileForm.get('fileSize')?.valid && 
+    fileForm.get('fileName')?.touched"
+    [class.invalid]="fileForm.get('fileSize')?.invalid && 
+    fileForm.get('fileName')?.touched">
+  </p> 
+  <p>
+    <label for="fileSizeFormat">file Size Format</label>
+    <select type="auto" id="fileSizeFormat" name="fileSizeFormat" formControlName="fileSizeFormat" >
+    <option value="KB">KB</option>
+    <option value="MB">MB</option>
+    <option value="GB">GB</option>
+    <option value="Byte">Byte</option>
+    </select>
+  
+  </p> 
+  <p>
+  <label for="fileType">file Type</label>
+  <select type="auto" id="fileType" name="fileType" formControlName="fileType" >
+  <option value="Docx">Docx</option>
+  <option value="xlsx">xlsx</option>
+  <option value="pptx">pptx</option>
+  <option value="PDF">PDF </option>
+  </select>
+
+</p> 
+<p>
+  <label for="notEncoded">is Encoded</label>
+  <input type="checkbox" id="isEncoded" name="isEncoded" formControlName="isEncoded">
+</p> 
+  <p>
+    <button type="submit" >Save</button>
+  </p>
+ 
+</form>
